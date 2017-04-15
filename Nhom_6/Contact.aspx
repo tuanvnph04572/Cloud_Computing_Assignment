@@ -2,49 +2,12 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <hgroup class="title">
-        <h1><%: Title %>.</h1>
-        <h2>Your contact page.</h2>
+        <h1>Our Address:<br />
+            <span style="font-size: 30px;">Tòa nhà FPT Polytechnic (nhà H), </span>
+            <br />
+            <span style="font-size: 30px;">Hàm Nghi, Mỹ Đình, Từ Liêm, Hà Nội<br />
+            </span>
+            <br />
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d238391.90772242437!2d105.830441!3d20.997705!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abbf59d8f429%3A0x7830a3dfd6e566a1!2zSG_DoG4gS2nhur9tLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2sus!4v1492237688542" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </hgroup>
-
-    <section class="contact">
-        <header>
-            <h3>Phone:</h3>
-        </header>
-        <p>
-            <span class="label">Main:</span>
-            <span>425.555.0100</span>
-        </p>
-        <p>
-            <span class="label">After Hours:</span>
-            <span>425.555.0199</span>
-        </p>
-    </section>
-
-    <section class="contact">
-        <header>
-            <h3>Email:</h3>
-        </header>
-        <p>
-            <span class="label">Support:</span>
-            <span><a href="mailto:Support@example.com">Support@example.com</a></span>
-        </p>
-        <p>
-            <span class="label">Marketing:</span>
-            <span><a href="mailto:Marketing@example.com">Marketing@example.com</a></span>
-        </p>
-        <p>
-            <span class="label">General:</span>
-            <span><a href="mailto:General@example.com">General@example.com</a></span>
-        </p>
-    </section>
-
-    <section class="contact">
-        <header>
-            <h3>Address:</h3>
-        </header>
-        <p>
-            One Microsoft Way<br />
-            Redmond, WA 98052-6399
-        </p>
-    </section>
 </asp:Content>

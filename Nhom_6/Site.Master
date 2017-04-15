@@ -4,7 +4,7 @@
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
-    <title>Sản Phẩm</title>
+    <title>Trang Chủ</title>
     <asp:PlaceHolder runat="server">        
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
@@ -38,7 +38,7 @@
         <div class="content-wrapper">
             <div class="float-left">
                 <p class="site-title">
-                    <a runat="server" href="~/San_Pham.aspx">your logo here</a></p>
+                    <a runat="server" href="~/index.aspx"><img src="Images/logo.png" width="200" height="auto" /></a></p>
             </div>
             <div class="float-right">
                 <section id="login">
@@ -58,8 +58,13 @@
                 </section>
                 <nav>
                     <ul id="menu">
-                        <li><a runat="server" href="~/San_Pham.aspx">Sản Phẩm</a></li>
-                        <li><a runat="server" href="~/About.aspx">About</a></li>
+                        <li><a id="A1" runat="server" href="~/index.aspx">Home Page</a></li>
+                        <li><a runat="server" href="~/product.aspx">Product</a></li>
+                        <li><a runat="server" href="~/kind_of_product.aspx">Kind Of Product</a></li>
+                        <li><a runat="server" href="~/customer.aspx">Customer</a></li>
+                        <li><a runat="server" href="~/Supplier.aspx">Supplier</a></li>
+                        <li><a runat="server" href="~/staff.aspx">Staffs</a></li>
+                        <li><a runat="server" href="~/bill.aspx">Bills</a></li>
                         <li><a runat="server" href="~/Contact.aspx">Contact</a></li>
                     </ul>
                 </nav>

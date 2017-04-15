@@ -146,7 +146,8 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
+    <Content Include="bill.aspx" />
+    <Content Include="customer.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Manage.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
@@ -221,7 +222,12 @@
     <Content Include="Images\orderedList7.png" />
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
+    <Content Include="kind_of_product.aspx" />
     <Content Include="packages.config" />
+    <Content Include="product.aspx" />
+    <Content Include="staff.aspx" />
+    <Content Include="Supplier.aspx" />
+    <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -261,11 +267,18 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\AuthConfig.vb" />
-    <Compile Include="About.aspx.designer.vb">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="bill.aspx.designer.vb">
+      <DependentUpon>bill.aspx</DependentUpon>
     </Compile>
-    <Compile Include="About.aspx.vb">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="bill.aspx.vb">
+      <DependentUpon>bill.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="customer.aspx.designer.vb">
+      <DependentUpon>customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer.aspx.vb">
+      <DependentUpon>customer.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Account\Login.aspx.vb">
@@ -320,6 +333,13 @@
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="kind_of_product.aspx.designer.vb">
+      <DependentUpon>kind_of_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kind_of_product.aspx.vb">
+      <DependentUpon>kind_of_product.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -339,12 +359,40 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="product.aspx.designer.vb">
+      <DependentUpon>product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product.aspx.vb">
+      <DependentUpon>product.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Site.Master.designer.vb">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.vb">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="staff.aspx.designer.vb">
+      <DependentUpon>staff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="staff.aspx.vb">
+      <DependentUpon>staff.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Supplier.aspx.designer.vb">
+      <DependentUpon>Supplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.aspx.vb">
+      <DependentUpon>Supplier.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

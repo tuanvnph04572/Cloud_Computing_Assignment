@@ -90,6 +90,7 @@
             <asp:Button ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Thêm" />
         </ItemTemplate>
     </asp:FormView>
+    <br />
     <asp:SqlDataSource ID="show_staff" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString_1 %>" DeleteCommand="DELETE FROM [NHAN_VIEN] WHERE [Ma_NV] = @original_Ma_NV" InsertCommand="INSERT INTO [NHAN_VIEN] ([Ma_NV], [HoTenNV], [GioiTinh], [DiaChi], [SDT], [Email], [Luong], [GhiChu]) VALUES (@Ma_NV, @HoTenNV, @GioiTinh, @DiaChi, @SDT, @Email, @Luong, @GhiChu)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [NHAN_VIEN]" UpdateCommand="UPDATE [NHAN_VIEN] SET [HoTenNV] = @HoTenNV, [GioiTinh] = @GioiTinh, [DiaChi] = @DiaChi, [SDT] = @SDT, [Email] = @Email, [Luong] = @Luong, [GhiChu] = @GhiChu WHERE [Ma_NV] = @original_Ma_NV">
         <DeleteParameters>
             <asp:Parameter Name="original_Ma_NV" Type="String" />

@@ -9,8 +9,8 @@
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Ma_NCC" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:BoundField DataField="Ma_NCC" HeaderText="Mã Nhà Cung Cấp" ReadOnly="True" SortExpression="Ma_NCC" />
-            <asp:BoundField DataField="TenNCC" HeaderText="Tên Nhà Cung Cấp" SortExpression="TenNCC" />
+            <asp:BoundField DataField="Ma_NCC" HeaderText="Mã nhà cung cấp" ReadOnly="True" SortExpression="Ma_NCC" />
+            <asp:BoundField DataField="TenNCC" HeaderText="Tên" SortExpression="TenNCC" />
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
@@ -36,23 +36,22 @@
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            Ma_NCC:
+            Mã nhà cung cấp:
             <asp:TextBox ID="Ma_NCCTextBox" runat="server" Text='<%# Bind("Ma_NCC") %>' />
             <br />
-            TenNCC:
+            Tên nhà cung cấp:
             <asp:TextBox ID="TenNCCTextBox" runat="server" Text='<%# Bind("TenNCC") %>' />
             <br />
-            <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-            &nbsp;<asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Thêm" />
+            &nbsp;<asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Hủy" />
         </InsertItemTemplate>
         <ItemTemplate>
-            <asp:Button ID="Button1" runat="server" CommandName="New" Text="Thêm Nhà Cung Cấp" Width="153px" />
+            <asp:Button ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Thêm" />
         </ItemTemplate>
     </asp:FormView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:Assignment_Nhom6ConnectionString %>" DeleteCommand="DELETE FROM [NHA_CC] WHERE [Ma_NCC] = @original_Ma_NCC AND [TenNCC] = @original_TenNCC" InsertCommand="INSERT INTO [NHA_CC] ([Ma_NCC], [TenNCC]) VALUES (@Ma_NCC, @TenNCC)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [Ma_NCC], [TenNCC] FROM [NHA_CC]" UpdateCommand="UPDATE [NHA_CC] SET [TenNCC] = @TenNCC WHERE [Ma_NCC] = @original_Ma_NCC AND [TenNCC] = @original_TenNCC">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString_1 %>" DeleteCommand="DELETE FROM [NHA_CC] WHERE [Ma_NCC] = @original_Ma_NCC" InsertCommand="INSERT INTO [NHA_CC] ([Ma_NCC], [TenNCC]) VALUES (@Ma_NCC, @TenNCC)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [NHA_CC]" UpdateCommand="UPDATE [NHA_CC] SET [TenNCC] = @TenNCC WHERE [Ma_NCC] = @original_Ma_NCC">
         <DeleteParameters>
             <asp:Parameter Name="original_Ma_NCC" Type="String" />
-            <asp:Parameter Name="original_TenNCC" Type="String" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Ma_NCC" Type="String" />
@@ -61,7 +60,6 @@
         <UpdateParameters>
             <asp:Parameter Name="TenNCC" Type="String" />
             <asp:Parameter Name="original_Ma_NCC" Type="String" />
-            <asp:Parameter Name="original_TenNCC" Type="String" />
         </UpdateParameters>
     </asp:SqlDataSource>
 </asp:Content>

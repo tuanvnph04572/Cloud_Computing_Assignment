@@ -9,14 +9,13 @@
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Ma_NV" DataSourceID="show_staff" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:BoundField DataField="Ma_NV" HeaderText="Mã Nhân Viên" ReadOnly="True" SortExpression="Ma_NV" />
-            <asp:BoundField DataField="HoTenNV" HeaderText="Họ Tên" SortExpression="HoTenNV" />
-            <asp:BoundField DataField="GioiTinh" HeaderText="Giới Tính" SortExpression="GioiTinh" />
-            <asp:BoundField DataField="DiaChi" HeaderText="Địa Chỉ" SortExpression="DiaChi" />
+            <asp:BoundField DataField="Ma_NV" HeaderText="Mã nhân viên" ReadOnly="True" SortExpression="Ma_NV" />
+            <asp:BoundField DataField="HoTenNV" HeaderText="Họ tên" SortExpression="HoTenNV" />
+            <asp:BoundField DataField="DiaChi" HeaderText="Địa chỉ" SortExpression="DiaChi" />
             <asp:BoundField DataField="SDT" HeaderText="SĐT" SortExpression="SDT" />
             <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
             <asp:BoundField DataField="Luong" HeaderText="Lương" SortExpression="Luong" />
-            <asp:BoundField DataField="GhiChu" HeaderText="Ghi Chú" SortExpression="GhiChu" />
+            <asp:BoundField DataField="GhiChu" HeaderText="Ghi chú" SortExpression="GhiChu" />
             <asp:CommandField HeaderText="Action" ShowDeleteButton="True" ShowEditButton="True" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
@@ -60,47 +59,40 @@
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            Ma_NV:
+            Mã nhân viên:
             <asp:TextBox ID="Ma_NVTextBox" runat="server" Text='<%# Bind("Ma_NV") %>' />
             <br />
-            HoTenNV:
+            Họ tên nhân viên:
             <asp:TextBox ID="HoTenNVTextBox" runat="server" Text='<%# Bind("HoTenNV") %>' />
             <br />
-            GioiTinh:
+            Giới tính:
             <asp:TextBox ID="GioiTinhTextBox" runat="server" Text='<%# Bind("GioiTinh") %>' />
             <br />
-            DiaChi:
+            Địa chỉ:
             <asp:TextBox ID="DiaChiTextBox" runat="server" Text='<%# Bind("DiaChi") %>' />
             <br />
-            SDT:
+            SĐT:
             <asp:TextBox ID="SDTTextBox" runat="server" Text='<%# Bind("SDT") %>' />
             <br />
             Email:
             <asp:TextBox ID="EmailTextBox" runat="server" Text='<%# Bind("Email") %>' />
             <br />
-            Luong:
+            Lương:
             <asp:TextBox ID="LuongTextBox" runat="server" Text='<%# Bind("Luong") %>' />
             <br />
-            GhiChu:
+            Ghi chú:
             <asp:TextBox ID="GhiChuTextBox" runat="server" Text='<%# Bind("GhiChu") %>' />
             <br />
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Thêm" />
+            &nbsp;<asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Hủy" />
         </InsertItemTemplate>
         <ItemTemplate>
-            <asp:Button ID="Button1" runat="server" CommandName="New" Text="Thêm Nhân Viên" Width="125px" />
+            <asp:Button ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Thêm" />
         </ItemTemplate>
     </asp:FormView>
-    <asp:SqlDataSource ID="show_staff" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:Assignment_Nhom6ConnectionString %>" DeleteCommand="DELETE FROM [NHAN_VIEN] WHERE [Ma_NV] = @original_Ma_NV AND [HoTenNV] = @original_HoTenNV AND [GioiTinh] = @original_GioiTinh AND [DiaChi] = @original_DiaChi AND [SDT] = @original_SDT AND [Email] = @original_Email AND [Luong] = @original_Luong AND (([GhiChu] = @original_GhiChu) OR ([GhiChu] IS NULL AND @original_GhiChu IS NULL))" InsertCommand="INSERT INTO [NHAN_VIEN] ([Ma_NV], [HoTenNV], [GioiTinh], [DiaChi], [SDT], [Email], [Luong], [GhiChu]) VALUES (@Ma_NV, @HoTenNV, @GioiTinh, @DiaChi, @SDT, @Email, @Luong, @GhiChu)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [Ma_NV], [HoTenNV], [GioiTinh], [DiaChi], [SDT], [Email], [Luong], [GhiChu] FROM [NHAN_VIEN]" UpdateCommand="UPDATE [NHAN_VIEN] SET [HoTenNV] = @HoTenNV, [GioiTinh] = @GioiTinh, [DiaChi] = @DiaChi, [SDT] = @SDT, [Email] = @Email, [Luong] = @Luong, [GhiChu] = @GhiChu WHERE [Ma_NV] = @original_Ma_NV AND [HoTenNV] = @original_HoTenNV AND [GioiTinh] = @original_GioiTinh AND [DiaChi] = @original_DiaChi AND [SDT] = @original_SDT AND [Email] = @original_Email AND [Luong] = @original_Luong AND (([GhiChu] = @original_GhiChu) OR ([GhiChu] IS NULL AND @original_GhiChu IS NULL))">
+    <asp:SqlDataSource ID="show_staff" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString_1 %>" DeleteCommand="DELETE FROM [NHAN_VIEN] WHERE [Ma_NV] = @original_Ma_NV" InsertCommand="INSERT INTO [NHAN_VIEN] ([Ma_NV], [HoTenNV], [GioiTinh], [DiaChi], [SDT], [Email], [Luong], [GhiChu]) VALUES (@Ma_NV, @HoTenNV, @GioiTinh, @DiaChi, @SDT, @Email, @Luong, @GhiChu)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [NHAN_VIEN]" UpdateCommand="UPDATE [NHAN_VIEN] SET [HoTenNV] = @HoTenNV, [GioiTinh] = @GioiTinh, [DiaChi] = @DiaChi, [SDT] = @SDT, [Email] = @Email, [Luong] = @Luong, [GhiChu] = @GhiChu WHERE [Ma_NV] = @original_Ma_NV">
         <DeleteParameters>
             <asp:Parameter Name="original_Ma_NV" Type="String" />
-            <asp:Parameter Name="original_HoTenNV" Type="String" />
-            <asp:Parameter Name="original_GioiTinh" Type="String" />
-            <asp:Parameter Name="original_DiaChi" Type="String" />
-            <asp:Parameter Name="original_SDT" Type="String" />
-            <asp:Parameter Name="original_Email" Type="String" />
-            <asp:Parameter Name="original_Luong" Type="Decimal" />
-            <asp:Parameter Name="original_GhiChu" Type="String" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="Ma_NV" Type="String" />
@@ -121,13 +113,6 @@
             <asp:Parameter Name="Luong" Type="Decimal" />
             <asp:Parameter Name="GhiChu" Type="String" />
             <asp:Parameter Name="original_Ma_NV" Type="String" />
-            <asp:Parameter Name="original_HoTenNV" Type="String" />
-            <asp:Parameter Name="original_GioiTinh" Type="String" />
-            <asp:Parameter Name="original_DiaChi" Type="String" />
-            <asp:Parameter Name="original_SDT" Type="String" />
-            <asp:Parameter Name="original_Email" Type="String" />
-            <asp:Parameter Name="original_Luong" Type="Decimal" />
-            <asp:Parameter Name="original_GhiChu" Type="String" />
         </UpdateParameters>
     </asp:SqlDataSource>
 </asp:Content>

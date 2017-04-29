@@ -49,10 +49,9 @@
         <asp:Button ID="Button1" runat="server" CommandName="New" Text="Thêm Loại Sản Phẩm" Width="156px" />
     </ItemTemplate>
 </asp:FormView>
-<asp:SqlDataSource ID="kindofproduct" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:Assignment_Nhom6ConnectionString %>" DeleteCommand="DELETE FROM [LOAI_SP] WHERE [Ma_Loai] = @original_Ma_Loai AND [TenLoai] = @original_TenLoai" InsertCommand="INSERT INTO [LOAI_SP] ([Ma_Loai], [TenLoai]) VALUES (@Ma_Loai, @TenLoai)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [Ma_Loai], [TenLoai] FROM [LOAI_SP]" UpdateCommand="UPDATE [LOAI_SP] SET [TenLoai] = @TenLoai WHERE [Ma_Loai] = @original_Ma_Loai AND [TenLoai] = @original_TenLoai">
+<asp:SqlDataSource ID="kindofproduct" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString_1 %>" DeleteCommand="DELETE FROM [LOAI_SP] WHERE [Ma_Loai] = @original_Ma_Loai" InsertCommand="INSERT INTO [LOAI_SP] ([Ma_Loai], [TenLoai]) VALUES (@Ma_Loai, @TenLoai)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [LOAI_SP]" UpdateCommand="UPDATE [LOAI_SP] SET [TenLoai] = @TenLoai WHERE [Ma_Loai] = @original_Ma_Loai">
     <DeleteParameters>
         <asp:Parameter Name="original_Ma_Loai" Type="String" />
-        <asp:Parameter Name="original_TenLoai" Type="String" />
     </DeleteParameters>
     <InsertParameters>
         <asp:Parameter Name="Ma_Loai" Type="String" />
@@ -61,7 +60,6 @@
     <UpdateParameters>
         <asp:Parameter Name="TenLoai" Type="String" />
         <asp:Parameter Name="original_Ma_Loai" Type="String" />
-        <asp:Parameter Name="original_TenLoai" Type="String" />
     </UpdateParameters>
 </asp:SqlDataSource>
 </asp:Content>

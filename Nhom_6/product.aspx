@@ -8,15 +8,15 @@
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Ma_SP" DataSourceID="show_product" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:BoundField DataField="Ma_SP" HeaderText="Mã Sản Phẩm" ReadOnly="True" SortExpression="Ma_SP" />
-                <asp:BoundField DataField="Ma_Loai" HeaderText="Mã Loại" SortExpression="Ma_Loai" />
-                <asp:BoundField DataField="Ma_NCC" HeaderText="Mã Nhà Cung Cấp" SortExpression="Ma_NCC" />
-                <asp:BoundField DataField="TenSP" HeaderText="Tên Sản Phẩm" SortExpression="TenSP" />
+                <asp:BoundField DataField="Ma_SP" HeaderText="Mã sản phẩm" ReadOnly="True" SortExpression="Ma_SP" />
+                <asp:BoundField DataField="Ma_Loai" HeaderText="Mã loại" SortExpression="Ma_Loai" />
+                <asp:BoundField DataField="Ma_NCC" HeaderText="Mã nhà cung cấp" SortExpression="Ma_NCC" />
+                <asp:BoundField DataField="TenSP" HeaderText="Tên sản phẩm" SortExpression="TenSP" />
                 <asp:BoundField DataField="GiaSP" HeaderText="Giá" SortExpression="GiaSP" />
-                <asp:BoundField DataField="SoLuong" HeaderText="Số Lượng" SortExpression="SoLuong" />
-                <asp:BoundField DataField="ChiTiet" HeaderText="Chi Tiết" SortExpression="ChiTiet" />
-                <asp:BoundField DataField="GhiChu" HeaderText="Ghi Chú" SortExpression="GhiChu" />
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                <asp:BoundField DataField="SoLuong" HeaderText="Số lượng" SortExpression="SoLuong" />
+                <asp:BoundField DataField="ChiTiet" HeaderText="Chi tiết" SortExpression="ChiTiet" />
+                <asp:BoundField DataField="GhiChu" HeaderText="Ghi chú" SortExpression="GhiChu" />
+                <asp:CommandField HeaderText="Action" ShowDeleteButton="True" ShowEditButton="True" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -59,47 +59,40 @@
                 &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
             </EditItemTemplate>
             <InsertItemTemplate>
-                Ma_SP:
+                Mã sản phẩm:
                 <asp:TextBox ID="Ma_SPTextBox" runat="server" Text='<%# Bind("Ma_SP") %>' />
                 <br />
-                Ma_Loai:
+                Mã loại:
                 <asp:TextBox ID="Ma_LoaiTextBox" runat="server" Text='<%# Bind("Ma_Loai") %>' />
                 <br />
-                Ma_NCC:
+                Mã nhà cung cấp:
                 <asp:TextBox ID="Ma_NCCTextBox" runat="server" Text='<%# Bind("Ma_NCC") %>' />
                 <br />
-                TenSP:
+                Tên:
                 <asp:TextBox ID="TenSPTextBox" runat="server" Text='<%# Bind("TenSP") %>' />
                 <br />
-                GiaSP:
+                Giá:
                 <asp:TextBox ID="GiaSPTextBox" runat="server" Text='<%# Bind("GiaSP") %>' />
                 <br />
-                SoLuong:
+                Số lượng:
                 <asp:TextBox ID="SoLuongTextBox" runat="server" Text='<%# Bind("SoLuong") %>' />
                 <br />
-                ChiTiet:
+                Chi tiết:
                 <asp:TextBox ID="ChiTietTextBox" runat="server" Text='<%# Bind("ChiTiet") %>' />
                 <br />
-                GhiChu:
+                Ghi chú:
                 <asp:TextBox ID="GhiChuTextBox" runat="server" Text='<%# Bind("GhiChu") %>' />
                 <br />
-                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Thêm" />
+                &nbsp;<asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Hủy" />
             </InsertItemTemplate>
             <ItemTemplate>
-                <asp:Button ID="Button1" runat="server" CommandName="New" Height="37px" Text="Thêm Sản Phẩm" Width="122px" />
+                <asp:Button ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="Thêm" />
             </ItemTemplate>
         </asp:FormView>
-        <asp:SqlDataSource ID="show_product" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:Assignment_Nhom6ConnectionString %>" DeleteCommand="DELETE FROM [SAN_PHAM] WHERE [Ma_SP] = @original_Ma_SP AND [Ma_Loai] = @original_Ma_Loai AND [Ma_NCC] = @original_Ma_NCC AND [TenSP] = @original_TenSP AND [GiaSP] = @original_GiaSP AND [SoLuong] = @original_SoLuong AND [ChiTiet] = @original_ChiTiet AND (([GhiChu] = @original_GhiChu) OR ([GhiChu] IS NULL AND @original_GhiChu IS NULL))" InsertCommand="INSERT INTO [SAN_PHAM] ([Ma_SP], [Ma_Loai], [Ma_NCC], [TenSP], [GiaSP], [SoLuong], [ChiTiet], [GhiChu]) VALUES (@Ma_SP, @Ma_Loai, @Ma_NCC, @TenSP, @GiaSP, @SoLuong, @ChiTiet, @GhiChu)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [Ma_SP], [Ma_Loai], [Ma_NCC], [TenSP], [GiaSP], [SoLuong], [ChiTiet], [GhiChu] FROM [SAN_PHAM]" UpdateCommand="UPDATE [SAN_PHAM] SET [Ma_Loai] = @Ma_Loai, [Ma_NCC] = @Ma_NCC, [TenSP] = @TenSP, [GiaSP] = @GiaSP, [SoLuong] = @SoLuong, [ChiTiet] = @ChiTiet, [GhiChu] = @GhiChu WHERE [Ma_SP] = @original_Ma_SP AND [Ma_Loai] = @original_Ma_Loai AND [Ma_NCC] = @original_Ma_NCC AND [TenSP] = @original_TenSP AND [GiaSP] = @original_GiaSP AND [SoLuong] = @original_SoLuong AND [ChiTiet] = @original_ChiTiet AND (([GhiChu] = @original_GhiChu) OR ([GhiChu] IS NULL AND @original_GhiChu IS NULL))">
+        <asp:SqlDataSource ID="show_product" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString_1 %>" DeleteCommand="DELETE FROM [SAN_PHAM] WHERE [Ma_SP] = @original_Ma_SP" InsertCommand="INSERT INTO [SAN_PHAM] ([Ma_SP], [Ma_Loai], [Ma_NCC], [TenSP], [GiaSP], [SoLuong], [ChiTiet], [GhiChu]) VALUES (@Ma_SP, @Ma_Loai, @Ma_NCC, @TenSP, @GiaSP, @SoLuong, @ChiTiet, @GhiChu)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [SAN_PHAM]" UpdateCommand="UPDATE [SAN_PHAM] SET [Ma_Loai] = @Ma_Loai, [Ma_NCC] = @Ma_NCC, [TenSP] = @TenSP, [GiaSP] = @GiaSP, [SoLuong] = @SoLuong, [ChiTiet] = @ChiTiet, [GhiChu] = @GhiChu WHERE [Ma_SP] = @original_Ma_SP">
             <DeleteParameters>
                 <asp:Parameter Name="original_Ma_SP" Type="String" />
-                <asp:Parameter Name="original_Ma_Loai" Type="String" />
-                <asp:Parameter Name="original_Ma_NCC" Type="String" />
-                <asp:Parameter Name="original_TenSP" Type="String" />
-                <asp:Parameter Name="original_GiaSP" Type="Decimal" />
-                <asp:Parameter Name="original_SoLuong" Type="Int32" />
-                <asp:Parameter Name="original_ChiTiet" Type="String" />
-                <asp:Parameter Name="original_GhiChu" Type="String" />
             </DeleteParameters>
             <InsertParameters>
                 <asp:Parameter Name="Ma_SP" Type="String" />
@@ -120,13 +113,6 @@
                 <asp:Parameter Name="ChiTiet" Type="String" />
                 <asp:Parameter Name="GhiChu" Type="String" />
                 <asp:Parameter Name="original_Ma_SP" Type="String" />
-                <asp:Parameter Name="original_Ma_Loai" Type="String" />
-                <asp:Parameter Name="original_Ma_NCC" Type="String" />
-                <asp:Parameter Name="original_TenSP" Type="String" />
-                <asp:Parameter Name="original_GiaSP" Type="Decimal" />
-                <asp:Parameter Name="original_SoLuong" Type="Int32" />
-                <asp:Parameter Name="original_ChiTiet" Type="String" />
-                <asp:Parameter Name="original_GhiChu" Type="String" />
             </UpdateParameters>
         </asp:SqlDataSource>
     </asp:Panel>

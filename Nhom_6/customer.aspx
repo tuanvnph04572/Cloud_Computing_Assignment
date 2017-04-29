@@ -82,39 +82,27 @@
                 <asp:Button ID="Button1" runat="server" CommandName="New" Text="Thêm Khách Hàng" Width="133px" />
             </ItemTemplate>
         </asp:FormView>
-        <asp:SqlDataSource ID="Show_Customer" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:Assignment_Nhom6ConnectionString %>" DeleteCommand="DELETE FROM [KHACH_HANG] WHERE [Ma_KH] = @original_Ma_KH AND [HoTen] = @original_HoTen AND [GioiTinh] = @original_GioiTinh AND [SDT] = @original_SDT AND [Email] = @original_Email AND [DiaChi] = @original_DiaChi AND (([GhiChu] = @original_GhiChu) OR ([GhiChu] IS NULL AND @original_GhiChu IS NULL))" InsertCommand="INSERT INTO [KHACH_HANG] ([Ma_KH], [HoTen], [GioiTinh], [SDT], [Email], [DiaChi], [GhiChu]) VALUES (@Ma_KH, @HoTen, @GioiTinh, @SDT, @Email, @DiaChi, @GhiChu)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [Ma_KH], [HoTen], [GioiTinh], [SDT], [Email], [DiaChi], [GhiChu] FROM [KHACH_HANG]" UpdateCommand="UPDATE [KHACH_HANG] SET [HoTen] = @HoTen, [GioiTinh] = @GioiTinh, [SDT] = @SDT, [Email] = @Email, [DiaChi] = @DiaChi, [GhiChu] = @GhiChu WHERE [Ma_KH] = @original_Ma_KH AND [HoTen] = @original_HoTen AND [GioiTinh] = @original_GioiTinh AND [SDT] = @original_SDT AND [Email] = @original_Email AND [DiaChi] = @original_DiaChi AND (([GhiChu] = @original_GhiChu) OR ([GhiChu] IS NULL AND @original_GhiChu IS NULL))">
+        <asp:SqlDataSource ID="Show_Customer" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString_1 %>" DeleteCommand="DELETE FROM [KHACH_HANG] WHERE [Ma_KH] = @original_Ma_KH" InsertCommand="INSERT INTO [KHACH_HANG] ([Ma_KH], [HoTen], [GioiTinh], [DiaChi], [SDT], [Email], [GhiChu]) VALUES (@Ma_KH, @HoTen, @GioiTinh, @DiaChi, @SDT, @Email, @GhiChu)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [KHACH_HANG]" UpdateCommand="UPDATE [KHACH_HANG] SET [HoTen] = @HoTen, [GioiTinh] = @GioiTinh, [DiaChi] = @DiaChi, [SDT] = @SDT, [Email] = @Email, [GhiChu] = @GhiChu WHERE [Ma_KH] = @original_Ma_KH">
             <DeleteParameters>
                 <asp:Parameter Name="original_Ma_KH" Type="String" />
-                <asp:Parameter Name="original_HoTen" Type="String" />
-                <asp:Parameter Name="original_GioiTinh" Type="String" />
-                <asp:Parameter Name="original_SDT" Type="String" />
-                <asp:Parameter Name="original_Email" Type="String" />
-                <asp:Parameter Name="original_DiaChi" Type="String" />
-                <asp:Parameter Name="original_GhiChu" Type="String" />
             </DeleteParameters>
             <InsertParameters>
                 <asp:Parameter Name="Ma_KH" Type="String" />
                 <asp:Parameter Name="HoTen" Type="String" />
                 <asp:Parameter Name="GioiTinh" Type="String" />
+                <asp:Parameter Name="DiaChi" Type="String" />
                 <asp:Parameter Name="SDT" Type="String" />
                 <asp:Parameter Name="Email" Type="String" />
-                <asp:Parameter Name="DiaChi" Type="String" />
                 <asp:Parameter Name="GhiChu" Type="String" />
             </InsertParameters>
             <UpdateParameters>
                 <asp:Parameter Name="HoTen" Type="String" />
                 <asp:Parameter Name="GioiTinh" Type="String" />
+                <asp:Parameter Name="DiaChi" Type="String" />
                 <asp:Parameter Name="SDT" Type="String" />
                 <asp:Parameter Name="Email" Type="String" />
-                <asp:Parameter Name="DiaChi" Type="String" />
                 <asp:Parameter Name="GhiChu" Type="String" />
                 <asp:Parameter Name="original_Ma_KH" Type="String" />
-                <asp:Parameter Name="original_HoTen" Type="String" />
-                <asp:Parameter Name="original_GioiTinh" Type="String" />
-                <asp:Parameter Name="original_SDT" Type="String" />
-                <asp:Parameter Name="original_Email" Type="String" />
-                <asp:Parameter Name="original_DiaChi" Type="String" />
-                <asp:Parameter Name="original_GhiChu" Type="String" />
             </UpdateParameters>
         </asp:SqlDataSource>
         <br />
